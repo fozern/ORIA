@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ORIA COI Map — Alternate Layout</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: "loose",
+      flowchart: {
+        useMaxWidth: false,
+        htmlLabels: true,
+        curve: "basis",
+        nodeSpacing: 50,
+        rankSpacing: 70
+      }
+    });
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 24px;
+      background: #f4f4f4;
+      color: #222;
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+
+    .note {
+      background: #fff8e6;
+      border: 1px solid #ead28b;
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 22px;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .diagram-wrap {
+      overflow-x: auto;
+      background: white;
+      border: 1px solid #c4d7ec;
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 28px;
+      box-shadow: 0 18px 38px rgba(31, 97, 164, 0.12);
+    }
+
+    .mermaid {
+      min-width: 1700px;
+      background: #fafcff;
+      padding: 18px;
+      border-radius: 10px;
+    }
+
+    .directory {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 24px;
+    }
+
+    .page-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .nav-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid #1f62a4;
+      background: #ffffff;
+      color: #1f62a4;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 10px 22px rgba(31, 97, 164, 0.12);
+      transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .nav-button:hover {
+      background: #eef4ff;
+      transform: translateY(-1px);
+      box-shadow: 0 12px 24px rgba(31, 97, 164, 0.16);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    th {
+      background: #f0f0f0;
+    }
+
+    a {
+      color: #0645ad;
+      word-break: break-all;
+    }
+
+    code {
+      font-family: Consolas, monospace;
+      font-size: 13px;
+      background: #f7f7f7;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>COI Link Map — Alternate Layout</h1>
+
+  <div class="page-links">
+    <a class="nav-button" href="index.html">Return to original version</a>
+  </div>
+
+  <div class="note">
+    This alternate version keeps the same COI link list but presents the flow in a cleaner, column-based diagram layout. The content remains the same, just organized differently for easier reading.
+  </div>
+
+  <div class="diagram-wrap">
+    <div class="mermaid">
+flowchart LR
+    classDef main fill:#d7ecff,stroke:#1f62a4,stroke-width:3px,color:#122a4a,font-weight:bold;
+    classDef action fill:#eef4ff,stroke:#3d7cb8,stroke-width:2px,color:#102a50,font-weight:bold;
+    classDef portal fill:#fffaf1,stroke:#c88935,stroke-width:2px,color:#4c3617;
+    classDef external fill:#ffe6e6,stroke:#c74747,stroke-width:2px,color:#7b1b1b,font-weight:bold;
+    classDef info fill:#f4f7ff,stroke:#8d9bb1,stroke-width:2px,color:#1f3d6f;
+
+    subgraph LEFT["Direct COI Actions"]
+      direction TB
+      E1["Submit Your Disclosure or Request Approval in RAMP"]:::action
+      E3["Annual Disclosure Guidance"]:::action
+      E4["Frequently Asked Questions"]:::action
+    end
+
+    subgraph CENTER["COI Hub"]
+      direction TB
+      E["Conflict of Interest"]:::main
+    end
+
+    subgraph RIGHT["Training & Support"]
+      direction TB
+      E2["RAMP COI Training"]:::portal
+      E22["Find RAMP Training"]:::portal
+      E21["Submit a Help Ticket"]:::external
+      E23["Contact Us Email Button"]:::external
+    end
+
+    subgraph BOTTOM["Training Categories"]
+      direction LR
+      G3["COI/COC Training"]:::info
+      G1["Grants & Agreements"]:::info
+      G2["Payroll Certification"]:::info
+      G4["Safety Training"]:::info
+      G5["IRB Training"]:::info
+      G6["IACUC Training"]:::info
+      G7["MasonLEAPS"]:::info
+    end
+
+    E --> E1
+    E --> E3
+    E --> E4
+    E --> E2
+    E2 --> E22
+    E2 --> E21
+    E2 --> E23
+    E22 --> G3
+    E22 --> G1
+    E22 --> G2
+    E22 --> G4
+    E22 --> G5
+    E22 --> G6
+    E22 --> G7
+
+    click E "https://coi.gmu.edu/" _blank
+    click E1 "https://coi.ramp.gmu.edu/" _blank
+    click E2 "https://ramp.gmu.edu/trainingcoi/" _blank
+    click E3 "https://coi.gmu.edu/annual-disclosure-guidance/" _blank
+    click E4 "https://coi.gmu.edu/frequently-asked-questions/" _blank
+    click E21 "https://gmu.teamdynamix.com/TDClient/33/Portal/Requests/TicketRequests/NewForm?ID=jz1187eMsFo_&RequestorType=Service" _blank
+    click E22 "https://ramp.gmu.edu/training/" _blank
+    click G1 "https://ramp.gmu.edu/trainingga/" _blank
+    click G2 "https://ramp.gmu.edu/training-paycert/" _blank
+    click G3 "https://ramp.gmu.edu/trainingcoi/" _blank
+    click G4 "https://ramp.gmu.edu/training-safety/" _blank
+    click G5 "https://ramp.gmu.edu/training-irb/" _blank
+    click G6 "https://ramp.gmu.edu/training-iacuc/" _blank
+    click G7 "https://hr.gmu.edu/masonleaps/" _blank
+    click E23 "mailto:?subject=COI%20Help" _blank
+    </div>
+  </div>
+
+  <div class="directory">
+    <h2>COI Link Directory</h2>
+    <p>This table lists every direct COI link and where it leads from the ORIA map.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>COI Item</th>
+          <th>Destination</th>
+          <th>Link</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Conflict of Interest</td>
+          <td>Main COI homepage</td>
+          <td><a href="https://coi.gmu.edu/" target="_blank">https://coi.gmu.edu/</a></td>
+          <td>Primary COI hub</td>
+        </tr>
+        <tr>
+          <td>Submit Your Disclosure or Request Approval in RAMP</td>
+          <td>RAMP login / disclosure submission</td>
+          <td><a href="https://coi.ramp.gmu.edu/" target="_blank">https://coi.ramp.gmu.edu/</a></td>
+          <td>Direct COI disclosure flow</td>
+        </tr>
+        <tr>
+          <td>RAMP COI Training</td>
+          <td>COI training hub</td>
+          <td><a href="https://ramp.gmu.edu/trainingcoi/" target="_blank">https://ramp.gmu.edu/trainingcoi/</a></td>
+          <td>Main COI training route</td>
+        </tr>
+        <tr>
+          <td>Annual Disclosure Guidance</td>
+          <td>Guidance page</td>
+          <td><a href="https://coi.gmu.edu/annual-disclosure-guidance/" target="_blank">https://coi.gmu.edu/annual-disclosure-guidance/</a></td>
+          <td>Also connects back to RAMP COI Training</td>
+        </tr>
+        <tr>
+          <td>Frequently Asked Questions</td>
+          <td>COI FAQ page</td>
+          <td><a href="https://coi.gmu.edu/frequently-asked-questions/" target="_blank">https://coi.gmu.edu/frequently-asked-questions/</a></td>
+          <td>FAQ entry point</td>
+        </tr>
+        <tr>
+          <td>Submit a Help Ticket</td>
+          <td>TeamDynamix support form</td>
+          <td><a href="https://gmu.teamdynamix.com/TDClient/33/Portal/Requests/TicketRequests/NewForm?ID=jz1187eMsFo_&RequestorType=Service" target="_blank">https://gmu.teamdynamix.com/TDClient/33/Portal/Requests/TicketRequests/NewForm?ID=jz1187eMsFo_&RequestorType=Service</a></td>
+          <td>COI help ticket destination</td>
+        </tr>
+        <tr>
+          <td>Find RAMP Training</td>
+          <td>Training listing page</td>
+          <td><a href="https://ramp.gmu.edu/training/" target="_blank">https://ramp.gmu.edu/training/</a></td>
+          <td>Supplemental training link</td>
+        </tr>
+        <tr>
+          <td>Contact Us Email Button</td>
+          <td>Email contact action</td>
+          <td><code>email button on page</code></td>
+          <td>Button target is not a fixed external URL</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

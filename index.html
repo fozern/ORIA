@@ -91,6 +91,34 @@
       border-radius: 4px;
     }
 
+    .page-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .nav-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid #1f62a4;
+      background: #ffffff;
+      color: #1f62a4;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 10px 22px rgba(31, 97, 164, 0.12);
+      transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .nav-button:hover {
+      background: #eef4ff;
+      transform: translateY(-1px);
+      box-shadow: 0 12px 24px rgba(31, 97, 164, 0.16);
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -127,6 +155,10 @@
 <body>
 
   <h1>COI Link Map</h1>
+
+  <div class="page-links">
+    <a class="nav-button" href="alternate.html">View alternate diagram version</a>
+  </div>
 
   <div class="note">
     <strong>Conflict of Interest (COI)</strong> is mapped here with every direct link it leads to from the ORIA flowchart. The visualization and table below show the exact COI pathway and its outbound destinations.
@@ -240,6 +272,10 @@ flowchart TB
     class E3,E4,E21,E23 action;
     class E2,E22,G1,G2,G3,G4,G5,G6,G7 portal;
     </div>
+  </div>
+
+  <div class="page-links" style="justify-content:center; margin-top: 12px;">
+    <a class="nav-button" href="alternate.html">Open alternate diagram version</a>
   </div>
 
   <div class="directory">
