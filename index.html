@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ORIA COI Link Map</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: "loose",
+      flowchart: {
+        useMaxWidth: false,
+        htmlLabels: true,
+        curve: "basis",
+        nodeSpacing: 55,
+        rankSpacing: 75
+      }
+    });
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 24px;
+      background: #f4f4f4;
+      color: #222;
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+
+    .note {
+      background: #fff8e6;
+      border: 1px solid #ead28b;
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 22px;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .diagram-wrap {
+      overflow-x: auto;
+      background: white;
+      border: 1px solid #c4d7ec;
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 28px;
+      box-shadow: 0 18px 38px rgba(31, 97, 164, 0.12);
+    }
+
+    .mermaid {
+      min-width: 1700px;
+      background: #fafcff;
+      padding: 18px;
+      border-radius: 10px;
+    }
+
+    .directory {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 24px;
+    }
+
+    .details {
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+    }
+
+    .details ul {
+      margin: 0;
+      padding-left: 18px;
+      line-height: 1.7;
+    }
+
+    .details ul li {
+      margin-bottom: 10px;
+    }
+
+    .details code {
+      background: #f7f7f7;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    th {
+      background: #f0f0f0;
+    }
+
+    a {
+      color: #0645ad;
+      word-break: break-all;
+    }
+
+    code {
+      font-family: Consolas, monospace;
+      font-size: 13px;
+      background: #f7f7f7;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>COI Link Map</h1>
+
+  <div class="note">
+    <strong>Conflict of Interest (COI)</strong> is mapped here with every direct link it leads to from the ORIA flowchart. The visualization and table below show the exact COI pathway and its outbound destinations.
+    <ul>
+      <li><strong>Blue node</strong> = COI main page.</li>
+      <li><strong>Bold nodes</strong> = primary COI actions.</li>
+      <li><strong>Red nodes</strong> = external links that leave the COI page (including help ticket and email button).</li>
+      <li><strong>Yellow nodes</strong> = RAMP training category destinations.</li>
+    </ul>
+  </div>
+
+  <div class="details">
+    <h2>COI Breakdown</h2>
+    <ul>
+      <li><strong>COI main page</strong> is <code>https://coi.gmu.edu/</code>, and it is the hub for disclosure, training, guidance, and FAQ.</li>
+      <li><strong>Submit Your Disclosure or Request Approval in RAMP</strong> is the embedded disclosure path. It is a SAML login into RAMP where disclosure forms are submitted and approvals are requested. This is the primary disclosure entrypoint.</li>
+      <li><strong>RAMP COI Training</strong> is the training hub at <code>https://ramp.gmu.edu/trainingcoi/</code>. It includes:
+        <ul>
+          <li>Submit a Help Ticket</li>
+          <li>Find RAMP Training</li>
+          <li>Contact Us Email Button</li>
+        </ul>
+      </li>
+      <li><strong>Training – COI/COC → Find RAMP Training</strong> takes you to the general RAMP training listing page at <code>https://ramp.gmu.edu/training/</code>. This page includes the following related training portals:
+        <ul>
+          <li>Grants and Agreements Training — <code>https://ramp.gmu.edu/trainingga/</code></li>
+          <li>Payroll Certification (PayCert) Training — <code>https://ramp.gmu.edu/training-paycert/</code></li>
+          <li>Conflict of Interest/Conflict of Commitment (COI/COC) Training — <code>https://ramp.gmu.edu/trainingcoi/</code></li>
+          <li>Safety Training — <code>https://ramp.gmu.edu/training-safety/</code></li>
+          <li>Institutional Review Board (IRB) Training — <code>https://ramp.gmu.edu/training-irb/</code></li>
+          <li>Institutional Animal Care and Use Committee (IACUC) Training — <code>https://ramp.gmu.edu/training-iacuc/</code></li>
+          <li>MasonLEAPS — <code>https://hr.gmu.edu/masonleaps/</code></li>
+        </ul>
+      </li>
+      <li><strong>Annual Disclosure Guidance</strong> is a guidance page at <code>https://coi.gmu.edu/annual-disclosure-guidance/</code>. It points back to the RAMP COI training flow, showing the relationship between disclosure rules and training requirements.</li>
+      <li><strong>Frequently Asked Questions</strong> is the FAQ page at <code>https://coi.gmu.edu/frequently-asked-questions/</code>, summarizing common COI procedures.</li>
+      <li><strong>Repetition / repeated destination</strong>: the RAMP training destination appears multiple times as both a direct training link and as a referenced target from Annual Disclosure Guidance and COI support paths.</li>
+    </ul>
+  </div>
+
+  <div class="diagram-wrap">
+    <div class="mermaid">
+flowchart TB
+    subgraph COI["COI Main Flow"]
+      direction TB
+      E["Conflict of Interest"]
+      E1["Submit Your Disclosure or Request Approval in RAMP"]
+      E2["RAMP COI Training"]
+      E3["Annual Disclosure Guidance"]
+      E4["Frequently Asked Questions"]
+    end
+
+    subgraph TRAIN["Find RAMP Training + Training Categories"]
+      direction TB
+      E22["Find RAMP Training"]
+      G1["Grants and Agreements Training"]
+      G2["Payroll Certification (PayCert) Training"]
+      G3["COI/COC Training"]
+      G4["Safety Training"]
+      G5["IRB Training"]
+      G6["IACUC Training"]
+      G7["MasonLEAPS"]
+    end
+
+    subgraph SUPPORT["Support and Help"]
+      direction TB
+      E21["Submit a Help Ticket"]
+      E23["Contact Us Email Button"]
+    end
+
+    E --> E1
+    E --> E2
+    E --> E3
+    E --> E4
+    E2 --> E21
+    E2 --> E22
+    E2 --> E23
+    E22 --> G1
+    E22 --> G2
+    E22 --> G3
+    E22 --> G4
+    E22 --> G5
+    E22 --> G6
+    E22 --> G7
+    E3 -.-> E2
+
+    click E "https://coi.gmu.edu/" _blank
+    click E1 "https://coi.ramp.gmu.edu/" _blank
+    click E2 "https://ramp.gmu.edu/trainingcoi/" _blank
+    click E3 "https://coi.gmu.edu/annual-disclosure-guidance/" _blank
+    click E4 "https://coi.gmu.edu/frequently-asked-questions/" _blank
+    click E21 "https://gmu.teamdynamix.com/TDClient/33/Portal/Requests/TicketRequests/NewForm?ID=jz1187eMsFo_&RequestorType=Service" _blank
+    click E22 "https://ramp.gmu.edu/training/" _blank
+    click G1 "https://ramp.gmu.edu/trainingga/" _blank
+    click G2 "https://ramp.gmu.edu/training-paycert/" _blank
+    click G3 "https://ramp.gmu.edu/trainingcoi/" _blank
+    click G4 "https://ramp.gmu.edu/training-safety/" _blank
+    click G5 "https://ramp.gmu.edu/training-irb/" _blank
+    click G6 "https://ramp.gmu.edu/training-iacuc/" _blank
+    click G7 "https://hr.gmu.edu/masonleaps/" _blank
+    click E23 "mailto:?subject=COI%20Help" _blank
+
+    classDef main fill:#d7ecff,stroke:#1f62a4,stroke-width:3px,color:#122a4a,font-weight:bold;
+    classDef action fill:#eef4ff,stroke:#3d7cb8,stroke-width:2px,color:#102a50,font-weight:bold;
+    classDef external fill:#ffe6e6,stroke:#c74747,stroke-width:2px,color:#7b1b1b,font-weight:bold;
+    classDef portal fill:#fffaf1,stroke:#c88935,stroke-width:2px,color:#4c3617;
+    classDef support fill:#e9f9ee,stroke:#4c8f57,stroke-width:2px,color:#223f23;
+
+    class E main;
+    class E1 external;
+    class E3,E4,E21,E23 action;
+    class E2,E22,G1,G2,G3,G4,G5,G6,G7 portal;
+    </div>
+  </div>
+
+  <div class="directory">
+    <h2>COI Link Directory</h2>
+    <p>This table lists every direct COI link and where it leads from the ORIA map.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>COI Item</th>
+          <th>Destination</th>
+          <th>Link</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Conflict of Interest</td>
+          <td>Main COI homepage</td>
+          <td><a href="https://coi.gmu.edu/" target="_blank">https://coi.gmu.edu/</a></td>
+          <td>Primary COI hub</td>
+        </tr>
+        <tr>
+          <td>Submit Your Disclosure or Request Approval in RAMP</td>
+          <td>RAMP login / disclosure submission</td>
+          <td><a href="https://shibboleth.gmu.edu/idp/profile/SAML2/Redirect/SSO?execution=e1s2&_eventId_proceed=1" target="_blank">https://shibboleth.gmu.edu/idp/profile/SAML2/Redirect/SSO?execution=e1s2&_eventId_proceed=1</a></td>
+          <td>Direct COI disclosure flow</td>
+        </tr>
+        <tr>
+          <td>RAMP COI Training</td>
+          <td>COI training hub</td>
+          <td><a href="https://ramp.gmu.edu/trainingcoi/" target="_blank">https://ramp.gmu.edu/trainingcoi/</a></td>
+          <td>Main COI training route</td>
+        </tr>
+        <tr>
+          <td>Annual Disclosure Guidance</td>
+          <td>Guidance page</td>
+          <td><a href="https://coi.gmu.edu/annual-disclosure-guidance/" target="_blank">https://coi.gmu.edu/annual-disclosure-guidance/</a></td>
+          <td>Also connects back to RAMP COI Training</td>
+        </tr>
+        <tr>
+          <td>Frequently Asked Questions</td>
+          <td>COI FAQ page</td>
+          <td><a href="https://coi.gmu.edu/frequently-asked-questions/" target="_blank">https://coi.gmu.edu/frequently-asked-questions/</a></td>
+          <td>FAQ entry point</td>
+        </tr>
+        <tr>
+          <td>Submit a Help Ticket</td>
+          <td>TeamDynamix support form</td>
+          <td><a href="https://gmu.teamdynamix.com/TDClient/33/Portal/Requests/TicketRequests/NewForm?ID=jz1187eMsFo_&RequestorType=Service" target="_blank">https://gmu.teamdynamix.com/TDClient/33/Portal/Requests/TicketRequests/NewForm?ID=jz1187eMsFo_&RequestorType=Service</a></td>
+          <td>COI help ticket destination</td>
+        </tr>
+        <tr>
+          <td>Find RAMP Training</td>
+          <td>General RAMP training portal</td>
+          <td><a href="https://ramp.gmu.edu/training/" target="_blank">https://ramp.gmu.edu/training/</a></td>
+          <td>From COI/COC training page to the broader RAMP training listing. Includes the related RAMP training categories below.</td>
+        </tr>
+        <tr>
+          <td>Grants and Agreements Training</td>
+          <td>Grants and Agreements training page</td>
+          <td><a href="https://ramp.gmu.edu/trainingga/" target="_blank">https://ramp.gmu.edu/trainingga/</a></td>
+          <td>Related RAMP training category visible from the general training portal</td>
+        </tr>
+        <tr>
+          <td>Payroll Certification (PayCert) Training</td>
+          <td>Payroll certification training page</td>
+          <td><a href="https://ramp.gmu.edu/training-paycert/" target="_blank">https://ramp.gmu.edu/training-paycert/</a></td>
+          <td>Related RAMP training category visible from the general training portal</td>
+        </tr>
+        <tr>
+          <td>Conflict of Interest/Conflict of Commitment (COI/COC) Training</td>
+          <td>COI/COC training page</td>
+          <td><a href="https://ramp.gmu.edu/trainingcoi/" target="_blank">https://ramp.gmu.edu/trainingcoi/</a></td>
+          <td>Primary COI/COC training hub referenced from the general RAMP training portal</td>
+        </tr>
+        <tr>
+          <td>Safety Training</td>
+          <td>Safety training page</td>
+          <td><a href="https://ramp.gmu.edu/training-safety/" target="_blank">https://ramp.gmu.edu/training-safety/</a></td>
+          <td>Related RAMP training category visible from the general training portal</td>
+        </tr>
+        <tr>
+          <td>Institutional Review Board (IRB) Training</td>
+          <td>IRB training page</td>
+          <td><a href="https://ramp.gmu.edu/training-irb/" target="_blank">https://ramp.gmu.edu/training-irb/</a></td>
+          <td>Related RAMP training category visible from the general training portal</td>
+        </tr>
+        <tr>
+          <td>Institutional Animal Care and Use Committee (IACUC) Training</td>
+          <td>IACUC training page</td>
+          <td><a href="https://ramp.gmu.edu/training-iacuc/" target="_blank">https://ramp.gmu.edu/training-iacuc/</a></td>
+          <td>Related RAMP training category visible from the general training portal</td>
+        </tr>
+        <tr>
+          <td>MasonLEAPS</td>
+          <td>MasonLEAPS portal</td>
+          <td><a href="https://hr.gmu.edu/masonleaps/" target="_blank">https://hr.gmu.edu/masonleaps/</a></td>
+          <td>External HR training portal linked from the RAMP training portal context</td>
+        </tr>
+        <tr>
+          <td>Contact Us Email Button</td>
+          <td>Email contact action</td>
+          <td><code>email button on page</code></td>
+          <td>Button target is not a fixed external URL</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

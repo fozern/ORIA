@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ORIA Site Map</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: "loose",
+      flowchart: {
+        useMaxWidth: false,
+        htmlLabels: true,
+        curve: "basis",
+        nodeSpacing: 55,
+        rankSpacing: 75
+      }
+    });
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 24px;
+      background: #f4f4f4;
+      color: #222;
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+
+    .note {
+      background: #fff8e6;
+      border: 1px solid #ead28b;
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 18px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .diagram-wrap {
+      overflow-x: auto;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 28px;
+    }
+
+    .mermaid {
+      min-width: 3600px;
+    }
+
+    .directory {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 24px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    th {
+      background: #f0f0f0;
+    }
+
+    a {
+      color: #0645ad;
+      word-break: break-all;
+    }
+
+    code {
+      font-family: Consolas, monospace;
+      font-size: 13px;
+      background: #f7f7f7;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>ORIA Site Map</h1>
+
+  <div class="note">
+    <strong>Legend:</strong><br>
+    Blue = main ORIA navigation<br>
+    Purple = main Topics of Interest pages<br>
+    Gray = regular internal pages or linked resources<br>
+    Green = important destination / hub / redirect target<br>
+    Light red = revisit / dead-end / follow-up needed<br>
+    Light yellow = needs follow-up / ask questions / revisit later<br>
+    Dotted lines = cross-topic connection or redirect relationship
+  </div>
+
+  <div class="diagram-wrap">
+    <div class="mermaid">
+flowchart LR
+
+    A[ORIA Home Landing Page]
+    B[Topics of Interest]
+    A --> B
+    A --> AC[Contact Us<br/>URL to confirm]
+
+    subgraph TOPICS[Topics of Interest]
+      direction LR
+      C[Animal Subjects]
+      D[Authorship Guidelines]
+      E[Conflict of Interest]
+      F[Conflict of Commitment]
+      G[Export and Sanctions Compliance]
+      H[Research Security and International Collaborations]
+      I[Human Subjects]
+      J[Research Misconduct]
+      K[Responsible Conduct of Research]
+    end
+
+    B --> C
+    B --> D
+    B --> E
+    B --> F
+    B --> G
+    B --> H
+    B --> I
+    B --> J
+    B --> K
+
+    subgraph ANIMAL[Animal Subjects]
+      direction TB
+      C1[Animal Subjects Overview Landing Page]
+      C2[Training Procedures]
+      C3[GMU University Policies]
+
+      C --> C1
+      C --> C2
+      C --> C3
+
+      C1 --> C11[GMU USDA Annual Report 2025 Redacted]
+      C1 --> C12[IR 498 GeogeMasonUniversity 29APR2025-001]
+
+      C2 --> C21[CITI Program]
+
+      C3 --> C31[Research Compliance Matrix]
+      C3 --> C32[University Policy 4004<br/>Occupational Health and Safety Program<br/>for Animal Care and Use Personnel]
+      C3 --> C33[IRBNet Information]
+    end
+
+    C32 -.-> C34[Research and Instructional Animal Care]
+    C33 -.-> I
+    C33 -.-> I1[IRB Review Process Page]
+
+    subgraph AUTHORSHIP[Authorship Guidelines]
+      direction TB
+      D1[Authorship Main Landing Page]
+      D11[Copyright in University Works]
+      D12[University Policy 4007<br/>Research Misconduct]
+
+      D --> D1
+      D1 --> D11
+      D1 --> D12
+    end
+
+    D12 -.-> J
+
+    subgraph COI[Conflict of Interest]
+      direction TB
+      E1[Submit Your Disclosure or<br/>Request Approval in RAMP]
+      E2[RAMP COI Training]
+      E3[Annual Disclosure Guidance]
+      E4[Frequently Asked Questions]
+
+      E --> E1
+      E --> E2
+      E --> E3
+      E --> E4
+
+      E2 --> E21[Submit a Help Ticket]
+      E2 --> E22[Find RAMP Training]
+      E2 --> E23[Contact Us Email Button]
+    end
+
+    E3 -.-> E2
+
+    subgraph COC[Conflict of Commitment]
+      direction TB
+      F1[Disclosures at Mason]
+      F2[Submit Your Disclosure]
+      F3[Conflict of Interest]
+      F4[Conflict of Commitment Page]
+
+      F --> F1
+      F1 --> F2
+      F1 --> F3
+      F1 --> F4
+
+      F4 --> F41[Submit Your Disclosure]
+      F4 --> F42[FAQ]
+      F4 --> F43[Videos Training]
+      F4 --> F44[University Policy 4021]
+      F4 --> F45[Quick Reference Guides]
+    end
+
+    F3 -.-> E
+    F43 -.-> E2
+
+    subgraph EXPORTS[Export and Sanctions Compliance]
+      direction TB
+      G1[Export and Sanctions Compliance Main Page]
+      G2[University Policy 1141<br/>Export Controls and Sanctions Compliance]
+      G3[Traveling Internationally]
+      G4[Needing Help with Restricted Party]
+      G5[Working with Foreign Colleagues and Organizations]
+      G6[Purchasing Equipment]
+      G7[International Shipments]
+      G8[Sanctioned Countries and Regions]
+      G9[Forms]
+      G10[Key Term Resources]
+      G11[Latest News]
+
+      G --> G1
+      G1 --> G2
+      G1 --> G3
+      G1 --> G4
+      G1 --> G5
+      G1 --> G6
+      G1 --> G7
+      G1 --> G8
+      G1 --> G9
+      G1 --> G10
+      G1 --> G11
+
+      G10 --> G101[Export Administration Regulations<br/>EAR 15 CFR 734-774]
+      G10 --> G102[Office of Foreign Assets Control<br/>OFAC 31 CFR 500-599]
+      G10 --> G103[International Traffic in Arms Regulations<br/>ITAR 22 CFR 120-130]
+    end
+
+    subgraph HUMAN[Human Subjects]
+      direction TB
+      I1
+    end
+
+    %% Click links
+    click A "https://oria.gmu.edu/" _blank
+    click B "https://oria.gmu.edu/topics/" _blank
+
+    click C "https://oria.gmu.edu/topics/animal-subjects/" _blank
+    click D "https://oria.gmu.edu/topics/authorship/" _blank
+    click E "https://coi.gmu.edu/" _blank
+    click F "https://disclose.gmu.edu/" _blank
+    click G "https://oria.gmu.edu/topics/export-sanctions-compliance/" _blank
+    click H "https://oria.gmu.edu/topics/research-security/" _blank
+    click I "https://oria.gmu.edu/topics/human-subjects/" _blank
+    click J "https://oria.gmu.edu/topics/research-misconduct/" _blank
+    click K "https://oria.gmu.edu/topics/rcr/" _blank
+
+    click C1 "https://oria.gmu.edu/topics/animal-subjects/" _blank
+    click C2 "https://oria.gmu.edu/topics/animal-subjects/training/" _blank
+    click C3 "https://oria.gmu.edu/topics/animal-subjects/" _blank
+    click C11 "https://oria.gmu.edu/wp-content/uploads/GMU-USDA-Annual-Report-2025-Redacted.pdf" _blank
+    click C12 "https://oria.gmu.edu/wp-content/uploads/IR-498-GeogeMasonUniversity-29APR2025-001.pdf" _blank
+    click C21 "https://www.citiprogram.org" _blank
+    click C31 "https://rdia.gmu.edu/about/matrix/" _blank
+    click C32 "https://universitypolicy.gmu.edu/policies/occupational-health-and-safety-program-for-animal-care-and-use-personnel/" _blank
+    click C33 "https://rdia.gmu.edu/topics/human-subjects/irb/" _blank
+    click C34 "https://universitypolicy.gmu.edu/policies/research-and-instructional-animal-care/" _blank
+
+    click D1 "https://oria.gmu.edu/topics/authorship/" _blank
+    click D11 "https://universitypolicy.gmu.edu/policies/copyright-in-university-works/" _blank
+    click D12 "https://universitypolicy.gmu.edu/policies/misconduct-in-research-and-scholarship/" _blank
+
+    click E1 "https://shibboleth.gmu.edu/idp/profile/SAML2/Redirect/SSO?execution=e1s2&_eventId_proceed=1" _blank
+    click E2 "https://ramp.gmu.edu/trainingcoi/" _blank
+    click E3 "https://coi.gmu.edu/annual-disclosure-guidance/" _blank
+    click E4 "https://coi.gmu.edu/frequently-asked-questions/" _blank
+    click E21 "https://gmu.teamdynamix.com/TDClient/33/Portal/Requests/TicketRequests/NewForm?ID=jz1187eMsFo_&RequestorType=Service" _blank
+    click E22 "https://ramp.gmu.edu/training/" _blank
+
+    click F1 "https://disclose.gmu.edu/" _blank
+    click F2 "https://coi.ramp.gmu.edu/" _blank
+    click F3 "https://coi.gmu.edu/" _blank
+    click F4 "https://disclose.gmu.edu/conflict-of-commitment/" _blank
+    click F41 "https://coi.ramp.gmu.edu/" _blank
+    click F42 "https://disclose.gmu.edu/frequently-asked-questions-2/" _blank
+    click F43 "https://ramp.gmu.edu/trainingcoi/" _blank
+    click F44 "https://disclose.gmu.edu/university-policy-4021/" _blank
+    click F45 "https://disclose.gmu.edu/quick-reference-guides/" _blank
+
+    click G1 "https://oria.gmu.edu/topics/export-sanctions-compliance/" _blank
+    click G2 "https://universitypolicy.gmu.edu/policies/export-controls-and-sanctions-compliance/" _blank
+    click G3 "https://oria.gmu.edu/topics/export-sanctions-compliance/international-travel/" _blank
+    click G4 "https://oria.gmu.edu/topics/export-sanctions-compliance/restricted-party-screening/" _blank
+    click G5 "https://oria.gmu.edu/topics/export-sanctions-compliance/working-with-foreign-colleagues-and-organizations/" _blank
+    click G6 "https://oria.gmu.edu/topics/export-sanctions-compliance/purchasing/" _blank
+    click G7 "https://oria.gmu.edu/topics/export-sanctions-compliance/international-shipments/" _blank
+    click G8 "https://oria.gmu.edu/topics/export-sanctions-compliance/sanctioned-countries-and-regions/" _blank
+    click G9 "https://oria.gmu.edu/topics/export-sanctions-compliance/forms/" _blank
+    click G101 "https://www.bis.doc.gov/index.php/regulations/export-administration-regulations-ear" _blank
+    click G102 "https://www.treasury.gov/resource-center/sanctions/Pages/CFR-links.aspx" _blank
+    click G103 "https://www.pmddtc.state.gov/ddtc_public?id=ddtc_kb_article_page&sys_id=%2024d528fddbfc930044f9ff621f961987" _blank
+
+    click I1 "https://oria.gmu.edu/topics/human-subjects/irb/" _blank
+
+    %% Styles
+    classDef main fill:#eef3ff,stroke:#7c9cff,stroke-width:1px,color:#111;
+    classDef topic fill:#f8f4ff,stroke:#9a7cff,stroke-width:1px,color:#111;
+    classDef regular fill:#f9f9f9,stroke:#999,stroke-width:1px,color:#111;
+    classDef important fill:#eefaf0,stroke:#68a36b,stroke-width:1px,color:#111;
+    classDef revisit fill:#fdeaea,stroke:#d97777,stroke-width:2px,color:#111;
+    classDef followup fill:#fff6cc,stroke:#d6b656,stroke-width:2px,color:#111;
+
+    class A,B,AC main;
+    class C,D,E,F,G,H,I,J,K topic;
+    class C1,C2,C3,C11,C12,C21,C32,C33,D1,D11,D12,E1,E3,E4,E21,E22,E23,F1,F2,F3,F4,F41,F42,F44,F45,G1,G2,G3,G4,G5,G6,G7,G8,G9,G10,G101,G102,G103 regular;
+    class C34,E2,F43,I1 important;
+    class C31 revisit;
+    class G11 followup;
+    </div>
+  </div>
+
+  <div class="directory">
+    <h2>Link Directory</h2>
+    <p>This table shows where each link comes from, what it is called, where it leads, and whether it also connects to another subject area.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Comes From</th>
+          <th>Name on Page</th>
+          <th>Link</th>
+          <th>Leads To / Connected To</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ORIA Home Landing Page</td>
+          <td>ORIA Home Landing Page</td>
+          <td><a href="https://oria.gmu.edu/" target="_blank">https://oria.gmu.edu/</a></td>
+          <td>Main ORIA home page</td>
+        </tr>
+        <tr>
+          <td>ORIA Home Landing Page</td>
+          <td>Topics of Interest</td>
+          <td><a href="https://oria.gmu.edu/topics/" target="_blank">https://oria.gmu.edu/topics/</a></td>
+          <td>Main Topics of Interest page</td>
+        </tr>
+        <tr>
+          <td>ORIA Home Landing Page</td>
+          <td>Contact Us</td>
+          <td><code>URL to confirm</code></td>
+          <td>Menu button mentioned in notes</td>
+        </tr>
+
+        <tr>
+          <td>Topics of Interest</td>
+          <td>Animal Subjects</td>
+          <td><a href="https://oria.gmu.edu/topics/animal-subjects/" target="_blank">https://oria.gmu.edu/topics/animal-subjects/</a></td>
+          <td>Main Animal Subjects page</td>
+        </tr>
+        <tr>
+          <td>Animal Subjects</td>
+          <td>Animal Subjects Overview Landing Page</td>
+          <td><a href="https://oria.gmu.edu/topics/animal-subjects/" target="_blank">https://oria.gmu.edu/topics/animal-subjects/</a></td>
+          <td>Overview section</td>
+        </tr>
+        <tr>
+          <td>Animal Subjects</td>
+          <td>Training Procedures</td>
+          <td><a href="https://oria.gmu.edu/topics/animal-subjects/training/" target="_blank">https://oria.gmu.edu/topics/animal-subjects/training/</a></td>
+          <td>Training section</td>
+        </tr>
+        <tr>
+          <td>Animal Subjects</td>
+          <td>GMU University Policies</td>
+          <td><a href="https://oria.gmu.edu/topics/animal-subjects/" target="_blank">https://oria.gmu.edu/topics/animal-subjects/</a></td>
+          <td>Policy section on Animal Subjects page</td>
+        </tr>
+        <tr>
+          <td>Animal Subjects Overview Landing Page</td>
+          <td>GMU USDA Annual Report 2025 Redacted</td>
+          <td><a href="https://oria.gmu.edu/wp-content/uploads/GMU-USDA-Annual-Report-2025-Redacted.pdf" target="_blank">https://oria.gmu.edu/wp-content/uploads/GMU-USDA-Annual-Report-2025-Redacted.pdf</a></td>
+          <td>PDF file</td>
+        </tr>
+        <tr>
+          <td>Animal Subjects Overview Landing Page</td>
+          <td>IR 498 GeogeMasonUniversity 29APR2025-001</td>
+          <td><a href="https://oria.gmu.edu/wp-content/uploads/IR-498-GeogeMasonUniversity-29APR2025-001.pdf" target="_blank">https://oria.gmu.edu/wp-content/uploads/IR-498-GeogeMasonUniversity-29APR2025-001.pdf</a></td>
+          <td>PDF file</td>
+        </tr>
+        <tr>
+          <td>Training Procedures</td>
+          <td>CITI Program</td>
+          <td><a href="https://www.citiprogram.org" target="_blank">https://www.citiprogram.org</a></td>
+          <td>External training site</td>
+        </tr>
+        <tr>
+          <td>GMU University Policies</td>
+          <td>Research Compliance Matrix</td>
+          <td><a href="https://rdia.gmu.edu/about/matrix/" target="_blank">https://rdia.gmu.edu/about/matrix/</a></td>
+          <td>Marked red for revisit / dead-end note</td>
+        </tr>
+        <tr>
+          <td>GMU University Policies</td>
+          <td>University Policy 4004 Occupational Health and Safety Program for Animal Care and Use Personnel</td>
+          <td><a href="https://universitypolicy.gmu.edu/policies/occupational-health-and-safety-program-for-animal-care-and-use-personnel/" target="_blank">https://universitypolicy.gmu.edu/policies/occupational-health-and-safety-program-for-animal-care-and-use-personnel/</a></td>
+          <td>Redirect-style connection to Research and Instructional Animal Care</td>
+        </tr>
+        <tr>
+          <td>University Policy 4004</td>
+          <td>Research and Instructional Animal Care</td>
+          <td><a href="https://universitypolicy.gmu.edu/policies/research-and-instructional-animal-care/" target="_blank">https://universitypolicy.gmu.edu/policies/research-and-instructional-animal-care/</a></td>
+          <td>Important destination page</td>
+        </tr>
+        <tr>
+          <td>GMU University Policies</td>
+          <td>IRBNet Information</td>
+          <td><a href="https://rdia.gmu.edu/topics/human-subjects/irb/" target="_blank">https://rdia.gmu.edu/topics/human-subjects/irb/</a></td>
+          <td>Cross-connected to Human Subjects and IRB Review Process Page</td>
+        </tr>
+        <tr>
+          <td>Human Subjects</td>
+          <td>IRB Review Process Page</td>
+          <td><a href="https://oria.gmu.edu/topics/human-subjects/irb/" target="_blank">https://oria.gmu.edu/topics/human-subjects/irb/</a></td>
+          <td>Connected from IRBNet Information under Animal Subjects policies</td>
+        </tr>
+
+        <tr>
+          <td>Topics of Interest</td>
+          <td>Authorship Guidelines</td>
+          <td><a href="https://oria.gmu.edu/topics/authorship/" target="_blank">https://oria.gmu.edu/topics/authorship/</a></td>
+          <td>Main Authorship page</td>
+        </tr>
+        <tr>
+          <td>Authorship Guidelines</td>
+          <td>Authorship Main Landing Page</td>
+          <td><a href="https://oria.gmu.edu/topics/authorship/" target="_blank">https://oria.gmu.edu/topics/authorship/</a></td>
+          <td>Main landing page</td>
+        </tr>
+        <tr>
+          <td>Authorship Main Landing Page</td>
+          <td>Copyright in University Works</td>
+          <td><a href="https://universitypolicy.gmu.edu/policies/copyright-in-university-works/" target="_blank">https://universitypolicy.gmu.edu/policies/copyright-in-university-works/</a></td>
+          <td>University policy website</td>
+        </tr>
+        <tr>
+          <td>Authorship Main Landing Page</td>
+          <td>University Policy 4007 Research Misconduct</td>
+          <td><a href="https://universitypolicy.gmu.edu/policies/misconduct-in-research-and-scholarship/" target="_blank">https://universitypolicy.gmu.edu/policies/misconduct-in-research-and-scholarship/</a></td>
+          <td>Connected to Research Misconduct topic</td>
+        </tr>
+
+        <tr>
+          <td>Topics of Interest</td>
+          <td>Conflict of Interest</td>
+          <td><a href="https://coi.gmu.edu/" target="_blank">https://coi.gmu.edu/</a></td>
+          <td>Main COI page</td>
+        </tr>
+        <tr>
+          <td>Conflict of Interest</td>
+          <td>Submit Your Disclosure or Request Approval in RAMP</td>
+          <td><a href="https://shibboleth.gmu.edu/idp/profile/SAML2/Redirect/SSO?execution=e1s2&_eventId_proceed=1" target="_blank">https://shibboleth.gmu.edu/idp/profile/SAML2/Redirect/SSO?execution=e1s2&_eventId_proceed=1</a></td>
+          <td>RAMP login / submission page</td>
+        </tr>
+        <tr>
+          <td>Conflict of Interest</td>
+          <td>RAMP COI Training</td>
+          <td><a href="https://ramp.gmu.edu/trainingcoi/" target="_blank">https://ramp.gmu.edu/trainingcoi/</a></td>
+          <td>Training hub; connected again from Annual Disclosure Guidance and Conflict of Commitment Videos Training</td>
+        </tr>
+        <tr>
+          <td>RAMP COI Training</td>
+          <td>Submit a Help Ticket</td>
+          <td><a href="https://gmu.teamdynamix.com/TDClient/33/Portal/Requests/TicketRequests/NewForm?ID=jz1187eMsFo_&RequestorType=Service" target="_blank">https://gmu.teamdynamix.com/TDClient/33/Portal/Requests/TicketRequests/NewForm?ID=jz1187eMsFo_&RequestorType=Service</a></td>
+          <td>Help ticket page</td>
+        </tr>
+        <tr>
+          <td>RAMP COI Training</td>
+          <td>Find RAMP Training</td>
+          <td><a href="https://ramp.gmu.edu/training/" target="_blank">https://ramp.gmu.edu/training/</a></td>
+          <td>Training page</td>
+        </tr>
+        <tr>
+          <td>RAMP COI Training</td>
+          <td>Contact Us Email Button</td>
+          <td><code>email button on page</code></td>
+          <td>Opens email automatically</td>
+        </tr>
+        <tr>
+          <td>Conflict of Interest</td>
+          <td>Annual Disclosure Guidance</td>
+          <td><a href="https://coi.gmu.edu/annual-disclosure-guidance/" target="_blank">https://coi.gmu.edu/annual-disclosure-guidance/</a></td>
+          <td>Connects back to RAMP COI Training</td>
+        </tr>
+        <tr>
+          <td>Conflict of Interest</td>
+          <td>Frequently Asked Questions</td>
+          <td><a href="https://coi.gmu.edu/frequently-asked-questions/" target="_blank">https://coi.gmu.edu/frequently-asked-questions/</a></td>
+          <td>FAQ page</td>
+        </tr>
+
+        <tr>
+          <td>Topics of Interest</td>
+          <td>Conflict of Commitment</td>
+          <td><a href="https://disclose.gmu.edu/" target="_blank">https://disclose.gmu.edu/</a></td>
+          <td>Disclosures at Mason main site</td>
+        </tr>
+        <tr>
+          <td>Disclosures at Mason</td>
+          <td>Submit Your Disclosure</td>
+          <td><a href="https://coi.ramp.gmu.edu/" target="_blank">https://coi.ramp.gmu.edu/</a></td>
+          <td>Disclosure submission page</td>
+        </tr>
+        <tr>
+          <td>Disclosures at Mason</td>
+          <td>Conflict of Interest</td>
+          <td><a href="https://coi.gmu.edu/" target="_blank">https://coi.gmu.edu/</a></td>
+          <td>Connects to the Conflict of Interest topic</td>
+        </tr>
+        <tr>
+          <td>Disclosures at Mason</td>
+          <td>Conflict of Commitment</td>
+          <td><a href="https://disclose.gmu.edu/conflict-of-commitment/" target="_blank">https://disclose.gmu.edu/conflict-of-commitment/</a></td>
+          <td>Conflict of Commitment page</td>
+        </tr>
+        <tr>
+          <td>Conflict of Commitment page</td>
+          <td>Submit Your Disclosure</td>
+          <td><a href="https://coi.ramp.gmu.edu/" target="_blank">https://coi.ramp.gmu.edu/</a></td>
+          <td>Disclosure submission page</td>
+        </tr>
+        <tr>
+          <td>Conflict of Commitment page</td>
+          <td>FAQ</td>
+          <td><a href="https://disclose.gmu.edu/frequently-asked-questions-2/" target="_blank">https://disclose.gmu.edu/frequently-asked-questions-2/</a></td>
+          <td>FAQ page</td>
+        </tr>
+        <tr>
+          <td>Conflict of Commitment page</td>
+          <td>Videos Training</td>
+          <td><a href="https://ramp.gmu.edu/trainingcoi/" target="_blank">https://ramp.gmu.edu/trainingcoi/</a></td>
+          <td>Connects to RAMP COI Training</td>
+        </tr>
+        <tr>
+          <td>Conflict of Commitment page</td>
+          <td>University Policy 4021</td>
+          <td><a href="https://disclose.gmu.edu/university-policy-4021/" target="_blank">https://disclose.gmu.edu/university-policy-4021/</a></td>
+          <td>Policy page</td>
+        </tr>
+        <tr>
+          <td>Conflict of Commitment page</td>
+          <td>Quick Reference Guides</td>
+          <td><a href="https://disclose.gmu.edu/quick-reference-guides/" target="_blank">https://disclose.gmu.edu/quick-reference-guides/</a></td>
+          <td>Reference guides page</td>
+        </tr>
+
+        <tr>
+          <td>Topics of Interest</td>
+          <td>Export and Sanctions Compliance</td>
+          <td><a href="https://oria.gmu.edu/topics/export-sanctions-compliance/" target="_blank">https://oria.gmu.edu/topics/export-sanctions-compliance/</a></td>
+          <td>Main Export and Sanctions Compliance page</td>
+        </tr>
+        <tr>
+          <td>Export and Sanctions Compliance Main Page</td>
+          <td>University Policy 1141 Export Controls and Sanctions Compliance</td>
+          <td><a href="https://universitypolicy.gmu.edu/policies/export-controls-and-sanctions-compliance/" target="_blank">https://universitypolicy.gmu.edu/policies/export-controls-and-sanctions-compliance/</a></td>
+          <td>University policy page</td>
+        </tr>
+        <tr>
+          <td>Export and Sanctions Compliance Main Page</td>
+          <td>Traveling Internationally</td>
+          <td><a href="https://oria.gmu.edu/topics/export-sanctions-compliance/international-travel/" target="_blank">https://oria.gmu.edu/topics/export-sanctions-compliance/international-travel/</a></td>
+          <td>Situation resource</td>
+        </tr>
+        <tr>
+          <td>Export and Sanctions Compliance Main Page</td>
+          <td>Needing Help with Restricted Party</td>
+          <td><a href="https://oria.gmu.edu/topics/export-sanctions-compliance/restricted-party-screening/" target="_blank">https://oria.gmu.edu/topics/export-sanctions-compliance/restricted-party-screening/</a></td>
+          <td>Situation resource</td>
+        </tr>
+        <tr>
+          <td>Export and Sanctions Compliance Main Page</td>
+          <td>Working with Foreign Colleagues and Organizations</td>
+          <td><a href="https://oria.gmu.edu/topics/export-sanctions-compliance/working-with-foreign-colleagues-and-organizations/" target="_blank">https://oria.gmu.edu/topics/export-sanctions-compliance/working-with-foreign-colleagues-and-organizations/</a></td>
+          <td>Situation resource</td>
+        </tr>
+        <tr>
+          <td>Export and Sanctions Compliance Main Page</td>
+          <td>Purchasing Equipment</td>
+          <td><a href="https://oria.gmu.edu/topics/export-sanctions-compliance/purchasing/" target="_blank">https://oria.gmu.edu/topics/export-sanctions-compliance/purchasing/</a></td>
+          <td>Situation resource</td>
+        </tr>
+        <tr>
+          <td>Export and Sanctions Compliance Main Page</td>
+          <td>International Shipments</td>
+          <td><a href="https://oria.gmu.edu/topics/export-sanctions-compliance/international-shipments/" target="_blank">https://oria.gmu.edu/topics/export-sanctions-compliance/international-shipments/</a></td>
+          <td>Situation resource</td>
+        </tr>
+        <tr>
+          <td>Export and Sanctions Compliance Main Page</td>
+          <td>Sanctioned Countries and Regions</td>
+          <td><a href="https://oria.gmu.edu/topics/export-sanctions-compliance/sanctioned-countries-and-regions/" target="_blank">https://oria.gmu.edu/topics/export-sanctions-compliance/sanctioned-countries-and-regions/</a></td>
+          <td>Situation resource</td>
+        </tr>
+        <tr>
+          <td>Export and Sanctions Compliance Main Page</td>
+          <td>Forms</td>
+          <td><a href="https://oria.gmu.edu/topics/export-sanctions-compliance/forms/" target="_blank">https://oria.gmu.edu/topics/export-sanctions-compliance/forms/</a></td>
+          <td>Forms page</td>
+        </tr>
+        <tr>
+          <td>Export and Sanctions Compliance Main Page</td>
+          <td>Key Term Resources</td>
+          <td><code>main section shown on map</code></td>
+          <td>Contains regulations and regulators links</td>
+        </tr>
+        <tr>
+          <td>Key Term Resources</td>
+          <td>Export Administration Regulations EAR 15 CFR 734-774</td>
+          <td><a href="https://www.bis.doc.gov/index.php/regulations/export-administration-regulations-ear" target="_blank">https://www.bis.doc.gov/index.php/regulations/export-administration-regulations-ear</a></td>
+          <td>External regulations page</td>
+        </tr>
+        <tr>
+          <td>Key Term Resources</td>
+          <td>Office of Foreign Assets Control OFAC 31 CFR 500-599</td>
+          <td><a href="https://www.treasury.gov/resource-center/sanctions/Pages/CFR-links.aspx" target="_blank">https://www.treasury.gov/resource-center/sanctions/Pages/CFR-links.aspx</a></td>
+          <td>External sanctions regulations page</td>
+        </tr>
+        <tr>
+          <td>Key Term Resources</td>
+          <td>International Traffic in Arms Regulations ITAR 22 CFR 120-130</td>
+          <td><a href="https://www.pmddtc.state.gov/ddtc_public?id=ddtc_kb_article_page&sys_id=%2024d528fddbfc930044f9ff621f961987" target="_blank">https://www.pmddtc.state.gov/ddtc_public?id=ddtc_kb_article_page&sys_id=%2024d528fddbfc930044f9ff621f961987</a></td>
+          <td>External ITAR regulations page</td>
+        </tr>
+        <tr>
+          <td>Export and Sanctions Compliance Main Page</td>
+          <td>Latest News</td>
+          <td><code>URL to confirm</code></td>
+          <td>Marked yellow for revisit / questions</td>
+        </tr>
+
+        <tr>
+          <td>Topics of Interest</td>
+          <td>Research Security and International Collaborations</td>
+          <td><a href="https://oria.gmu.edu/topics/research-security/" target="_blank">https://oria.gmu.edu/topics/research-security/</a></td>
+          <td>Main topic page</td>
+        </tr>
+        <tr>
+          <td>Topics of Interest</td>
+          <td>Human Subjects</td>
+          <td><a href="https://oria.gmu.edu/topics/human-subjects/" target="_blank">https://oria.gmu.edu/topics/human-subjects/</a></td>
+          <td>Main topic page</td>
+        </tr>
+        <tr>
+          <td>Topics of Interest</td>
+          <td>Research Misconduct</td>
+          <td><a href="https://oria.gmu.edu/topics/research-misconduct/" target="_blank">https://oria.gmu.edu/topics/research-misconduct/</a></td>
+          <td>Main topic page</td>
+        </tr>
+        <tr>
+          <td>Topics of Interest</td>
+          <td>Responsible Conduct of Research</td>
+          <td><a href="https://oria.gmu.edu/topics/rcr/" target="_blank">https://oria.gmu.edu/topics/rcr/</a></td>
+          <td>Main topic page</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

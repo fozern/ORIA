@@ -1,0 +1,43 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 30px;
+  background: #f7f7f7;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.section {
+  margin-bottom: 15px;
+}
+
+.toggle {
+  display: block;
+  width: 300px;
+  text-align: left;
+  padding: 12px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  margin-bottom: 6px;
+  border-radius: 8px;
+}
+
+.content {
+  display: none;
+  margin-left: 20px;
+  padding-left: 10px;
+  border-left: 2px solid #ccc;
+}
+
+.content a {
+  display: block;
+  margin: 8px 0;
+  color: #004080;
+  text-decoration: none;
+}
+
+.content a:hover {
+  text-decoration: underline;
+}
