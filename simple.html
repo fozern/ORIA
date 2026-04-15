@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ORIA COI Map — Alternate Layout</title>
+  <title>ORIA COI Map — Simple Layout</title>
 
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <script>
@@ -54,7 +54,7 @@
     }
 
     .mermaid {
-      min-width: 1700px;
+      min-width: 1200px;
       background: #fafcff;
       padding: 18px;
       border-radius: 10px;
@@ -130,71 +130,42 @@
 </head>
 <body>
 
-  <h1>COI Link Map — Alternate Layout</h1>
+  <h1>COI Link Map — Simple Layout</h1>
 
   <div class="page-links">
-    <a class="nav-button" href="index.html">Return to original version</a>
-    <a class="nav-button" href="simple.html">View simple diagram version</a>
+    <a class="nav-button" href="index.html">Original version</a>
+    <a class="nav-button" href="alternate.html">Alternate version</a>
   </div>
 
   <div class="note">
-    This alternate version keeps the same COI link list but presents the flow in a cleaner, column-based diagram layout. The content remains the same, just organized differently for easier reading.
+    This simple version keeps the same COI link directory but uses a clean, linear diagram layout for easy reading. The content remains identical to the original page.
   </div>
 
   <div class="diagram-wrap">
     <div class="mermaid">
-flowchart LR
+flowchart TD
     classDef main fill:#d7ecff,stroke:#1f62a4,stroke-width:3px,color:#122a4a,font-weight:bold;
     classDef action fill:#eef4ff,stroke:#3d7cb8,stroke-width:2px,color:#102a50,font-weight:bold;
     classDef portal fill:#fffaf1,stroke:#c88935,stroke-width:2px,color:#4c3617;
     classDef external fill:#ffe6e6,stroke:#c74747,stroke-width:2px,color:#7b1b1b,font-weight:bold;
-    classDef info fill:#f4f7ff,stroke:#8d9bb1,stroke-width:2px,color:#1f3d6f;
 
-    subgraph LEFT["Direct COI Actions"]
-      direction TB
-      E1["Submit Your Disclosure or Request Approval in RAMP"]:::action
-      E3["Annual Disclosure Guidance"]:::action
-      E4["Frequently Asked Questions"]:::action
-    end
+    E["Conflict of Interest"]:::main
+    E --> E1["Submit Your Disclosure or Request Approval in RAMP"]:::action
+    E --> E2["RAMP COI Training"]:::portal
+    E --> E3["Annual Disclosure Guidance"]:::action
+    E --> E4["Frequently Asked Questions"]:::action
 
-    subgraph CENTER["COI Hub"]
-      direction TB
-      E["Conflict of Interest"]:::main
-    end
+    E2 --> E21["Submit a Help Ticket"]:::external
+    E2 --> E22["Find RAMP Training"]:::portal
+    E2 --> E23["Contact Us Email Button"]:::external
 
-    subgraph RIGHT["Training & Support"]
-      direction TB
-      E2["RAMP COI Training"]:::portal
-      E22["Find RAMP Training"]:::portal
-      E21["Submit a Help Ticket"]:::external
-      E23["Contact Us Email Button"]:::external
-    end
-
-    subgraph BOTTOM["Training Categories"]
-      direction LR
-      G3["COI/COC Training"]:::info
-      G1["Grants & Agreements"]:::info
-      G2["Payroll Certification"]:::info
-      G4["Safety Training"]:::info
-      G5["IRB Training"]:::info
-      G6["IACUC Training"]:::info
-      G7["MasonLEAPS"]:::info
-    end
-
-    E --> E1
-    E --> E3
-    E --> E4
-    E --> E2
-    E2 --> E22
-    E2 --> E21
-    E2 --> E23
-    E22 --> G3
-    E22 --> G1
-    E22 --> G2
-    E22 --> G4
-    E22 --> G5
-    E22 --> G6
-    E22 --> G7
+    E22 --> G1["Grants and Agreements Training"]
+    E22 --> G2["Payroll Certification (PayCert) Training"]
+    E22 --> G3["COI/COC Training"]
+    E22 --> G4["Safety Training"]
+    E22 --> G5["IRB Training"]
+    E22 --> G6["IACUC Training"]
+    E22 --> G7["MasonLEAPS"]
 
     click E "https://coi.gmu.edu/" _blank
     click E1 "https://coi.ramp.gmu.edu/" _blank
